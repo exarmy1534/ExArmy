@@ -5,41 +5,72 @@ import { InfiniteMovingCards } from "../src/components/ui/infinite-moving-cards"
 
 export default function Section() {
   return (
-    <div
-      className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-      <InfiniteMovingCards items={testimonials} direction="right" speed="slow" />
+    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white items-center justify-center relative overflow-hidden">
+      <h3 className="text-xl md:text-2xl font-bold text-[#D97706] mb-5">
+        Explore With Ease
+      </h3>
+      <h2 className="text-[1.3rem] md:text-5xl font-bold text-gray-900 mt-4 mb-6">
+        Book Rides Across Popular Cities
+      </h2>
+
+      <InfiniteMovingCards items={destinations} direction="right" speed="slow" />
     </div>
   );
 }
 
-const testimonials = [
+const destinations = [
   {
-    quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+    name: "Kashi Vishwanath Temple",
+    description:
+      "Visit the sacred temple dedicated to Lord Shiva in the heart of Varanasi.",
+    image: "/Kashi.jpg",
   },
   {
-    quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
+    name: "Sarnath",
+    description:
+      "A peaceful Buddhist site where Lord Buddha gave his first sermon.",
+    image: "/Sarnath.jpg",
   },
   {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+    name: "Varanasi Airport",
+    description:
+      "Reliable taxi transfers to and from Lal Bahadur Shastri Airport.",
+    image: "/Airport.jpg",
   },
   {
-    quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+    name: "Assi Ghat",
+    description:
+      "Famous for sunrise rituals, Ganga aarti, and boat rides.",
+    image: "/Ghat.jpg",
   },
   {
-    quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+    name: "Ramnagar Fort",
+    description:
+      "A historic 17th-century fort and museum along the Ganges.",
+    image: "/Fort.jpg",
+  },
+  {
+    name: "Banaras Hindu University",
+    description:
+      "A vast historic campus with temples and peaceful surroundings.",
+    image: "/BHU.jpg",
+  },
+  {
+    name: "Ayodhya Ram Mandir",
+    description:
+      "The sacred birthplace of Lord Rama and a major pilgrimage site.",
+    image: "/Ayodhya.jpg",
+  },
+  {
+    name: "Triveni Sangam, Prayagraj",
+    description:
+      "The holy confluence of the Ganga, Yamuna, and Saraswati rivers.",
+    image: "/Prayag.jpg",
+  },
+  {
+    name: "Bodh Gaya",
+    description:
+      "Home to the Mahabodhi Temple where Buddha attained enlightenment.",
+    image: "/Bodh.jpg",
   },
 ];
