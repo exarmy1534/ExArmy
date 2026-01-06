@@ -59,7 +59,7 @@ export default function Card({ img, name, location, tag, rates }) {
             Book Now
           </button></Link>
 
-          <a href="tel:+918090579753" onClick={(e) => e.stopPropagation()}>
+          <a href="tel:+917830931514" onClick={(e) => e.stopPropagation()}>
             <button className="h-full cursor-pointer active:bg-gray-100 flex items-center justify-center px-4 rounded-xl border border-[#FBBF24] hover:bg-yellow-50 transition">
               <Phone className="text-[#D97706]" size={18} />
             </button>
