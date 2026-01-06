@@ -1,5 +1,5 @@
 export default function Call() {
-  const phoneNumber = "918090579753";
+  const phoneNumber = "917830931514";
   const callUrl = `tel:${phoneNumber}`;
 
   return (
