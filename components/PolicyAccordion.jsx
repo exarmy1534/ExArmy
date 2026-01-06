@@ -6,83 +6,84 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Car,
+  ShieldCheck,
+  CreditCard,
+  HelpCircle,
+  Mail,
+} from "lucide-react";
 
+const policies = [
+  {
+    id: "1",
+    icon: <Car className="w-5 h-5 text-gray-500" />,
+    question: "Driver's License Requirements",
+    answer:
+      "A valid driving license with at least one year of experience is required to rent a vehicle.",
+  },
+  {
+    id: "2",
+    icon: <ShieldCheck className="w-5 h-5 text-gray-500" />,
+    question: "Insurance and Coverage Policy",
+    answer:
+      "All rentals include basic insurance coverage. Optional upgrades are available.",
+  },
+  {
+    id: "3",
+    icon: <CreditCard className="w-5 h-5 text-gray-500" />,
+    question: "Available Payment Methods",
+    answer: "We accept UPI, cards, net banking, and cash payments.",
+  },
+  {
+    id: "4",
+    icon: <HelpCircle className="w-5 h-5 text-gray-500" />,
+    question: "Cancellation and Modification Policy",
+    answer: "Free cancellation up to 24 hours before pickup time.",
+  },
+  {
+    id: "5",
+    icon: <ShieldCheck className="w-5 h-5 text-gray-500" />,
+    question: "Smoking and Pet Policy",
+    answer: "Smoking is not allowed. Pets are permitted only in selected cars.",
+  },
+  {
+    id: "6",
+    icon: <Mail className="w-5 h-5 text-gray-500" />,
+    question: "Minimum Age Requirement",
+    answer: "The minimum age to rent a car is 21 years.",
+  },
+];
 
-function PolicyAccordion(){
-  return(
-
-<section className="w-full py-20 bg-white flex items-center justify-center ">
+function PolicyAccordion() {
+  return (
+    <section className="w-full py-20 bg-white flex items-center justify-center">
       <div className="max-w-4xl px-6 w-full">
 
-        <p className="text-[#FF3600] font-semibold mb-4">
-          * Rental Conditions
-        </p>
-
-        <h2 className=" text-xl md:text-3xl lg:text-4xl font-bold text-black mb-12">
-          Policies and agreement
+        <h2 className="text-xl md:text-3xl text-center lg:text-4xl font-bold text-black mb-12">
+          Policies and Agreement
         </h2>
 
-        <Accordion type="single" collapsible className="space-y-4  ">
-
-          <AccordionItem value="1" className="border  rounded-2xl px-4">
-            <AccordionTrigger className="text-lg cursor-pointer font-semibold">
-              Driver&apos;s License Requirements
-            </AccordionTrigger>
-            <AccordionContent>
-              A valid driving license with at least one year of experience is
-              required to rent a vehicle.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="2" className="border rounded-2xl px-4">
-            <AccordionTrigger className="text-lg cursor-pointer font-semibold">
-              Insurance and Coverage Policy
-            </AccordionTrigger>
-            <AccordionContent>
-              All rentals include basic insurance coverage. Optional upgrades
-              are available.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="3" className="border rounded-2xl px-4">
-            <AccordionTrigger className="text-lg cursor-pointer font-semibold">
-              Available Payment Methods
-            </AccordionTrigger>
-            <AccordionContent>
-              We accept UPI, cards, net banking, and cash payments.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="4" className="border rounded-2xl px-4">
-            <AccordionTrigger className="text-lg cursor-pointer font-semibold">
-              Cancellation and Modification Policy
-            </AccordionTrigger>
-            <AccordionContent>
-              Free cancellation up to 24 hours before pickup time.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="5" className="border rounded-2xl px-4">
-            <AccordionTrigger className="text-lg cursor-pointer font-semibold">
-              Smoking and Pet Policy
-            </AccordionTrigger>
-            <AccordionContent>
-              Smoking is not allowed. Pets are permitted only in selected cars.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="6" className="border rounded-2xl px-4">
-            <AccordionTrigger className="text-lg cursor-pointer font-semibold">
-              Minimum Age Requirement
-            </AccordionTrigger>
-            <AccordionContent>
-              The minimum age to rent a car is 21 years.
-            </AccordionContent>
-          </AccordionItem>
-
+        <Accordion type="single" collapsible className="space-y-4">
+          {policies.map((policy) => (
+            <AccordionItem
+              key={policy.id}
+              value={policy.id}
+              className="border rounded-2xl px-4"
+            >
+              <AccordionTrigger className="flex gap-3 text-lg cursor-pointer font-semibold">
+                {policy.icon}
+                {policy.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600 leading-relaxed">
+                {policy.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
       </div>
     </section>
-     )
+  );
 }
-export default PolicyAccordion
+
+export default PolicyAccordion;
