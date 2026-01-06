@@ -6,37 +6,37 @@ import { Car, Target, Compass, CheckCircle } from "lucide-react";
 const content = {
   vision: {
     label: "Our Vision",
-    title: "Redefining the future of car rentals",
+    title: "Making car rentals seamless across India",
     description:
-      "We imagine a world where mobility is simple, trustworthy, and available to everyone. Through innovation and premium service standards, we are shaping the next generation of car rental experiences.",
+      "At Ex-Army Travels, we envision a future where car rentals are reliable, convenient, and accessible anywhere in India. We aim to set new standards in comfort, safety, and service for every journey.",
     points: [
-      "Customer-first mindset always",
-      "Uncompromised quality standards",
-      "Vehicles maintained to perfection"
+      "Customer-first approach in every interaction",
+      "Fleet maintained to the highest standards",
+      "Trusted drivers for safe and comfortable travel"
     ],
     icon: Car
   },
   mission: {
     label: "Our Mission",
-    title: "Making every journey smooth and memorable",
+    title: "Delivering safe, reliable, and memorable journeys",
     description:
-      "Our mission is to deliver dependable, tech-driven, and customer-friendly rental services that make every trip stress-free and enjoyable.",
+      "Our mission is to provide a dependable car rental experience that combines professional service, modern technology, and exceptional convenience for travelers.",
     points: [
-      "Seamless digital booking",
-      "Reliable and diverse fleet",
-      "Safety and comfort assured"
+      "Easy digital booking and payments",
+      "Experienced Ex-Army drivers for all trips",
+      "Transparent pricing with no hidden charges"
     ],
     icon: Target
   },
   approach: {
     label: "Our Approach",
-    title: "Built on trust, powered by innovation",
+    title: "Built on trust, driven by excellence",
     description:
-      "By blending smart technology with human-centric service, we ensure every interaction is efficient, transparent, and satisfying.",
+      "We blend technology with personal service to ensure every ride is smooth, transparent, and enjoyable. From city tours to long-distance trips, our approach is centered on customer satisfaction.",
     points: [
-      "Transparent processes",
-      "Continuous service improvement",
-      "Consistent experience across locations"
+      "Strict safety and vehicle checks",
+      "Continuous improvement in service quality",
+      "Consistent experience across all destinations"
     ],
     icon: Compass
   }
@@ -74,27 +74,27 @@ export default function AboutTab() {
                 className={`group text-left p-8 rounded-3xl border transition-all duration-300
                   ${
                     isActive
-                      ? "bg-[#FF3600] text-white border-[#FF3600] shadow-xl scale-105"
+                      ? "bg-[#FEFCE8] text-white border-[#FBBF24] shadow-xl scale-105"
                       : "bg-white border-gray-200 hover:shadow-lg"
                   }`}
               >
                 <Icon
                   className={`w-10 h-10 mb-4 ${
                     isActive
-                      ? "text-white"
-                      : "text-[#FF3600] group-hover:text-[#FF3600]"
+                      ? "text-[#FBBF24]"
+                      : "text-[#FBBF24] group-hover:text-[#FF3600]"
                   }`}
                 />
                 <h3
                   className={`text-2xl font-bold mb-2 ${
-                    isActive ? "text-white" : "text-gray-900"
+                    isActive ? "text-[#FBBF24]" : "text-gray-900"
                   }`}
                 >
                   {content[key].label}
                 </h3>
                 <p
                   className={`text-sm ${
-                    isActive ? "text-orange-100" : "text-gray-600"
+                    isActive ? "text-[#FBBF24]" : "text-gray-600"
                   }`}
                 >
                   {content[key].title}
@@ -109,7 +109,7 @@ export default function AboutTab() {
 
           {/* Left Content */}
           <div>
-            <span className="inline-block px-4 py-1 mb-6 text-sm font-semibold rounded-full bg-orange-100 text-[#FF3600]">
+            <span className="inline-block px-4 py-1 mb-6 text-sm font-semibold rounded-full bg-[#FBBF24] text-black">
               {content[active].label}
             </span>
 
@@ -124,7 +124,7 @@ export default function AboutTab() {
             <ul className="space-y-5">
               {content[active].points.map((point, index) => (
                 <li key={index} className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-[#FF3600] mt-1" />
+                  <CheckCircle className="w-6 h-6 text-[#FBBF24] mt-1" />
                   <span className="text-gray-800 font-medium">{point}</span>
                 </li>
               ))}
@@ -135,7 +135,7 @@ export default function AboutTab() {
           <div className="relative flex justify-center">
             <div className="absolute inset-0 bg-gradient-to-tr from-orange-200 to-orange-100 rounded-[3rem] rotate-6"></div>
             <div className="relative w-80 h-80 bg-white rounded-[3rem] flex items-center justify-center shadow-2xl">
-              <ActiveIcon className="w-36 h-36 text-[#FF3600]" />
+              <ActiveIcon className="w-36 h-36 text-[#FBBF24]" />
             </div>
           </div>
 
