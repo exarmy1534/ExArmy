@@ -23,10 +23,10 @@ const Footer = () => {
             {/* Brand */}
             <div>
               <h2 className="text-2xl font-bold">
-            <span className="text-[#FF3600]">ARADHYA TOUR</span> AND TRAVELS
+            <span className="text-[#FF3600]">Ex Army </span>Travels
           </h2>
               <p className="text-gray-400 mt-4">
-                Experience the comfort and reliability of traveling with Aaradhya Tour & Travels.
+                Experience the comfort and reliability of traveling with Ex Army Travels.
               </p>
             </div>
 
@@ -60,7 +60,7 @@ const Footer = () => {
                 {/* Email Input */}
                   <p className="text-gray-400 mt-4">Email : <a href="mailto:rajat6427@gmail.com" className="text-orange-500 hover:underline">
                   
-                rajat6427@gmail.com</a>
+                exarmy1534@gmail.com</a>
               </p>
               
               </div>
@@ -73,7 +73,7 @@ const Footer = () => {
           {/* Bottom Section */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-gray-400 text-sm">
-              © 2025 Aaradhya Tour & Travels. All rights reserved.
+              © 2025 Ex Army Travels. All rights reserved.
             </p>
 
             <div className="flex gap-4">
