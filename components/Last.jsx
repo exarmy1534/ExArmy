@@ -3,14 +3,14 @@ import Link from "next/link";
 import { FlipWord } from "./FlipWord";
 const Last = () => {
     return (
-        <div className="w-full flex justify-center px-4 py-10">
+        <div className="w-full flex justify-center  ">
 
             {/* Main Black Box */}
             <div
                 className="
           relative bg-black overflow-hidden
-          w-full lg:w-[95%]
-          rounded-[40px]
+          w-full 
+         
         "
             >
                 {/* GRID BACKGROUND */}
@@ -30,7 +30,7 @@ const Last = () => {
 
                     {/* LEFT TEXT */}
                     <div className="max-w-xl text-white">
-                        <FlipWord/>
+                        <FlipWord />
 
                         {/* BUTTONS */}
                         <div className="mt-8 flex items-center gap-4">
@@ -43,9 +43,9 @@ const Last = () => {
                     </div>
 
                     {/* RIGHT IMAGE */}
-                    <div className="w-full lg:w-[520px]">
+                    <div className="w-full lg:w-[590px]">
                         <Image
-                            src="/Carimage.png"
+                            src="/bgur.png"
                             alt="Car"
                             className="w-full object-contain"
                             width={800}      // Add an appropriate width
