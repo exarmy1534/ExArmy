@@ -10,7 +10,7 @@ export function FlipWord() {
       <div className="text-4xl mx-auto font-normal text-[#CBCBCB] dark:text-neutral-100">
         Book
         <FlipWords duration={1000} words={words} /> <br />
-        car rentals with Aaradhya Tour & Travels
+        car rentals with Ex Army Travels
       </div>
     </div>
   );
