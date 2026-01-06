@@ -67,10 +67,10 @@ export default function Any() {
   return (
     <section id="domestic" className="flex flex-col items-center justify-center bg-white py-20">
       <div className=" w-full px-2 md:px-10 flex items-center py-20 md:py-30 flex-col bg-white ">
-        <h1 className="text-[0.7rem] md:text-2xl font-bold text-[#D97706]">
+        <h1 className="text-xl md:text-2xl font-bold text-[#D97706]">
           Our Fleets
         </h1>
-        <h1 ref={headingRef} className="text-xl md:text-5xl text-black font-bold mb-10">
+        <h1 ref={headingRef} className="text-[1.4rem] md:text-5xl text-black font-bold mb-10">
           Reliable rides, ready for you.
         </h1>
 
