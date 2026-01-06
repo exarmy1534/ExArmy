@@ -4,12 +4,13 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white py-10 flex justify-center">
+    <footer className="w-full bg-white flex justify-center">
       {/* Main Footer Wrapper */}
-      <div className="relative w-full lg:w-[95%] rounded-none lg:rounded-[40px] overflow-hidden">
+      <div className="relative w-full   overflow-hidden">
 
         {/* Background Gradient */}
-        <div  className="absolute inset-0 bg-gradient-to-br  from-black via-[#0f0f0f] to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-br  from-black via-[#0f0f0f] to-black"></div>
+        
 
         {/* Glow Effects */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-orange-500/20 rounded-full blur-3xl"></div>
@@ -23,8 +24,8 @@ const Footer = () => {
             {/* Brand */}
             <div>
               <h2 className="text-2xl font-bold">
-            <span className="text-[#FF3600]">Ex Army </span>Travels
-          </h2>
+                <span className="text-[#FF3600]">Ex Army </span>Travels
+              </h2>
               <p className="text-gray-400 mt-4">
                 Experience the comfort and reliability of traveling with Ex Army Travels.
               </p>
@@ -58,11 +59,11 @@ const Footer = () => {
 
               <div className="flex items-center">
                 {/* Email Input */}
-                  <p className="text-gray-400 mt-4">Email : <a href="mailto:rajat6427@gmail.com" className="text-orange-500 hover:underline">
-                  
-                exarmy1534@gmail.com</a>
-              </p>
-              
+                <p className="text-gray-400 mt-4">Email : <a href="mailto:rajat6427@gmail.com" className="text-orange-500 hover:underline">
+
+                  exarmy1534@gmail.com</a>
+                </p>
+
               </div>
             </div>
           </div>
