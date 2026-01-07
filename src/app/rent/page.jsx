@@ -21,7 +21,7 @@ function Rent() {
 
             <SeoContent/>
             
-            <Last/>
+           
 
             <footer>
                 <Footer />
