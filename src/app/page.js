@@ -91,7 +91,7 @@ export default function Home() {
 
 
 
-        <Section />
+        <Section/>
 
 
         <HomeSeoContent />
@@ -100,7 +100,7 @@ export default function Home() {
         <Testimonial />
         <PolicyMain />
 
-        <Last />
+        {/* <Last /> */}
       </main>
       <footer>
         <Footer />
