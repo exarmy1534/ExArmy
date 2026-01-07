@@ -171,7 +171,7 @@ export default function page() {
       <AboutTab />
       <AboutSeoContent />
       <PolicyAccordion />
-      <Last />
+    
 
       <footer>
         <Footer />
