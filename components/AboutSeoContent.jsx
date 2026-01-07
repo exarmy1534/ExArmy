@@ -1,9 +1,9 @@
 export default function AboutSeoContent() {
   return (
     <div className="flex items-center justify-center"> 
-      <section className="w-full lg:w-[95%] lg:rounded-[3rem] flex items-center justify-center flex-col bg-[#FFF8F6] px-4 md:px-10 py-16">
-        <h2 className="mt-5 text-[1rem] mb-5 md:text-xl font-bold text-[#FF3600]">
-          <i className="fa-solid fa-asterisk text-xl font-bold text-[#FF3600]"></i>{" "}
+      <section className="w-full  flex items-center justify-center flex-col bg-[#FFFBF2] px-4 md:px-10 py-16">
+   
+         <h2 className="text-xl md:text-2xl font-bold text-[#D97706]">
           Why Choose Us
         </h2>
 
@@ -20,7 +20,7 @@ export default function AboutSeoContent() {
           </p>
 
           <p className="mb-4">
-            With extensive knowledge of Varanasi’s roads, traffic conditions, and
+            With extensive knowledge of Varanasi's roads, traffic conditions, and
             key destinations, our experienced drivers ensure every ride is smooth,
             timely, and hassle-free. We focus on providing a travel experience that
             values safety, professionalism, and customer satisfaction.
