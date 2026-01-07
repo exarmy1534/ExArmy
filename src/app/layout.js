@@ -43,7 +43,7 @@ export const metadata = {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Ex Army Travels – Reliable taxi and car rental service in Varanasi",
+        alt: "Ex Army Travels - Reliable taxi and car rental service in Varanasi",
       },
     ],
     locale: "en_IN",
@@ -70,7 +70,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/logo.png" sizes="any" />
         <link rel="apple-touch-icon" href="/logo.png" />
 
-        {/* Google Analytics */}
+        {/* Google Analytics
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-SBQTX18BJ9"
           strategy="afterInteractive"
@@ -83,7 +83,7 @@ export default function RootLayout({ children }) {
             gtag('js', new Date());
             gtag('config', 'G-SBQTX18BJ9');
           `}
-        </Script>
+        </Script> */}
       </head>
 
       <body
