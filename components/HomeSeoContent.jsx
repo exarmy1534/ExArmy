@@ -1,15 +1,14 @@
 export default function HomeSeoContent() {
   return (
     <div className="flex items-center mt-10 justify-center">
-      <section className="w-full lg:w-[95%] lg:rounded-[3rem] flex items-center justify-center flex-col bg-[#FFF8F6] px-4 md:px-10 py-16">
-        <h2 className="mt-5 text-[1rem] mb-5 md:text-xl font-bold text-[#FF3600]">
-          <i className="fa-solid fa-asterisk text-xl font-bold text-[#FF3600]"></i>{" "}
-          Reliable Car Rental & Taxi Services in Varanasi
-        </h2>
+      <section className="w-full   flex items-center justify-center flex-col bg-[#F9FAFB] px-4 md:px-10 py-16">
+          <h1 className="text-[0.7rem] md:text-2xl font-bold text-[#D97706] mb-5">
+          Reliable Car Service
+        </h1>
 
         <div className="max-w-5xl mx-auto text-gray-700 leading-7">
           <h2 className="text-3xl font-bold text-black mb-4">
-            Ex Army Travels – Professional Taxi & Car Rental Service in Varanasi
+            Ex Army Travels - Professional Taxi & Car Rental Service in Varanasi
           </h2>
 
           <p className="mb-4">
