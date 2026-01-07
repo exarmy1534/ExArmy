@@ -2,15 +2,15 @@ export default function SeoContent() {
   return (
     <>
       <div className="flex items-center justify-center">
-        <section className="w-full lg:w-[95%] bg-[#FFF8F6] flex items-center justify-center flex-col lg:rounded-[3rem] px-4 md:px-10 py-16">
-          <h2 className="mt-5 text-[1rem] mb-5 md:text-xl font-bold text-[#FF3600]">
-            <i className="fa-solid fa-asterisk text-xl font-bold text-[#FF3600]"></i>{" "}
+        <section className="w-full  bg-gray-50 flex items-center justify-center flex-col  px-4 md:px-10 py-16">
+
+          <h3 className="text-xl md:text-2xl font-bold text-[#D97706] mb-5">
             Our Journey
-          </h2>
+          </h3>
 
           <div className="max-w-5xl mx-auto text-gray-700 leading-7">
             <h2 className="text-3xl font-bold text-black mb-4">
-              Car Rental & Taxi Services in Varanasi – Ex Army Travels
+              Car Rental & Taxi Services in Varanasi - Ex Army Travels
             </h2>
 
             <p className="mb-4">
