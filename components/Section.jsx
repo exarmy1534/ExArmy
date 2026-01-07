@@ -23,13 +23,13 @@ const destinations = [
     name: "Kashi Vishwanath Temple",
     description:
       "Visit the sacred temple dedicated to Lord Shiva in the heart of Varanasi.",
-    image: "./Kashi.jpg",
+    image: "/Kashi.jpg",
   },
   {
     name: "Sarnath",
     description:
       "A peaceful Buddhist site where Lord Buddha gave his first sermon.",
-    image: "./Sarnath.jpg",
+    image: "/Sarnath.jpg",
   },
   {
     name: "Varanasi Airport",
@@ -74,4 +74,5 @@ const destinations = [
     image: "/Bodh.jpg",
   },
 ];
+
 
