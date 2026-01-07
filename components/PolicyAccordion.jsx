@@ -57,7 +57,7 @@ const policies = [
 
 function PolicyAccordion() {
   return (
-    <section className="w-full py-20 bg-white flex items-center justify-center">
+    <section className="w-full py-20 bg-[#F9FAFB] flex items-center justify-center">
       <div className="max-w-4xl px-6 w-full">
 
         <h2 className="text-xl md:text-3xl text-center lg:text-4xl font-bold text-black mb-12">
