@@ -1,139 +1,244 @@
-"use client";
+"use client"
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa";
-import Footer from "./Footer";
+import { Phone, Mail, MapPin, Send } from "lucide-react";
 import Nav from "./Nav";
 import Side from "./Side";
+import Footer from "./Footer";
 
-const Contact = () => {
-  const [open, setOpen] = useState(false);
-  const [car, setCar] = useState(null);
-
+const Contact2 = () => {
   const searchParams = useSearchParams();
+  const [car, setCar] = useState(null);
 
   useEffect(() => {
     setCar(searchParams.get("car"));
   }, [searchParams]);
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "personal", // ✅ DEFAULT SELECTED
+    date: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const whatsappNumber = "917830931514";
+    const carText = car ? `\nCar: ${car}` : "";
+
+    const finalMessage = encodeURIComponent(
+      `Hey, I want to rent a car.
+Name: ${formData.name}
+Phone: ${formData.phone}
+Service: ${formData.service}
+Pickup Date: ${formData.date}${carText}`
+    );
+
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${finalMessage}`,
+      "_blank"
+    );
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      service: "personal", // keep default after submit
+      date: "",
+      message: "",
+    });
+  };
+
   return (
     <>
-      <Nav open={open} setOpen={setOpen} />
-      <Side open={open} setOpen={setOpen} />
+      <Nav />
+      <Side />
 
-      <div className="min-h-screen md:mt-10 mt-20 bg-gray-100 flex items-center justify-center px-6">
-        <div className="w-full lg:w-[95%] bg-white rounded-2xl shadow-lg p-8 grid md:grid-cols-2 gap-10">
+      <section id="contact" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
 
-          {/* LEFT CONTACT CARD */}
-          <div className="relative bg-black text-white rounded-2xl p-10 flex flex-col justify-between">
-            <div>
-              <h2 className="text-4xl font-bold mb-4">Contact Information</h2>
-              <p className="text-gray-400 mb-8">Say something to start a live chat!</p>
-
-              <InfoItem icon={<FaPhoneAlt />} text={<a href="tel:+918090579753">+91 80905 79753</a>} />
-              <InfoItem icon={<FaEnvelope />} text={<a href="mailto:rajat6427@gmail.com">rajat6427@gmail.com</a>} />
-              <InfoItem icon={<FaMapMarkerAlt />} text={<>Varanasi 221005 <br />Uttar Pradesh, India</>} />
-            </div>
-
-            <div className="flex gap-4 mt-8">
-              <SocialIcon link="https://facebook.com"><FaFacebookF /></SocialIcon>
-              <SocialIcon link="https://youtube.com"><FaYoutube /></SocialIcon>
-              <SocialIcon link="https://instagram.com"><FaInstagram /></SocialIcon>
-            </div>
-
-            <div className="absolute -bottom-10 -right-10 w-28 md:w-40 h-28 md:h-40 bg-white/10 rounded-full"></div>
-            <div className="absolute bottom-16 right-16 w-24 h-24 bg-white/10 rounded-full"></div>
+          <div className="text-center mb-16">
+            <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider">
+              Get In Touch
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">
+              Book Your Ride
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Fill out the form below or contact us directly for reservations and inquiries
+            </p>
           </div>
 
-          {/* RIGHT FORM */}
-          <form
-            className="space-y-6 md:space-y-8 p-2 md:p-6"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const firstName = e.target[0].value.trim();
-              const lastName = e.target[1].value.trim();
-              const email = e.target[2].value.trim();
-              const phone = e.target[3].value.trim();
-              const message = e.target[4].value.trim();
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-              if (!firstName || !lastName) {
-                alert("Please fill in both First Name and Last Name.");
-                return;
-              }
+            <div className="space-y-6">
+              <div className="rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">
+                  Contact Information
+                </h3>
 
-              const carText = car ? `Car: ${car}` : "";
-              const finalMessage = encodeURIComponent(
-                `Hey, I want to rent a car.\nFirst Name: ${firstName}\nLast Name: ${lastName}\nEmail: ${email}\nPhone: ${phone}\n${carText}\nMessage: ${message}`
-              );
+                <div className="space-y-6">
+                  <div className="flex gap-4">
+                    <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Phone</p>
+                      <a href="tel:+917830931514" className="text-gray-700 hover:underline">
+                        +91 78309 31514
+                      </a>
+                    </div>
+                  </div>
 
-              window.open(`https://wa.me/918090579753?text=${finalMessage}`, "_blank");
-            }}
-          >
-            <div className="grid md:grid-cols-2 gap-4">
-              <InputField label="First Name" placeholder="Enter Your Name" />
-              <InputField label="Last Name" placeholder="Enter Your Name" />
+                  <div className="flex gap-4">
+                    <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center">
+                      <Mail className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Email</p>
+                      <a href="mailto:exarmy1534@gmail.com" className="text-gray-700 hover:underline">
+                        exarmy1534@gmail.com
+                      </a>
+                      <p className="text-gray-700">exarmytravels.com</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">Address</p>
+                      <p className="text-gray-700">Varanasi, Uttar Pradesh</p>
+                      <p className="text-gray-700">India - 221001</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-8 border-t border-amber-200">
+                  <p className="font-semibold">Business Hours</p>
+                  <p className="text-gray-700">24/7 Available</p>
+                  <p className="text-sm text-gray-600">For Services</p>
+                </div>
+              </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
-              <InputField label="Email" placeholder="Enter Your Email" type="email" />
-              <InputField label="Phone" placeholder="Enter Your Number" />
+            <div className="lg:col-span-2">
+              <div className="rounded-xl bg-white shadow-xl p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="text-sm font-medium">Full Name *</label>
+                      <input
+                        name="name"
+                        placeholder="Enter Name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="mt-2 w-full h-10 border rounded-md px-3"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="text-sm font-medium">Phone *</label>
+                      <input
+                        name="phone"
+                        placeholder="Mobile Number"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="mt-2 w-full h-10 border rounded-md px-3"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="text-sm font-medium">Email</label>
+                      <input
+                        type="email"
+                        placeholder="Email Address"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="mt-2 w-full h-10 border rounded-md px-3"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="text-sm font-medium">Service *</label>
+                      <select
+                        name="service"
+                        required
+                        value={formData.service}
+                        onChange={handleChange}
+                        className="mt-2 w-full h-10 border rounded-md px-3"
+                      >
+                        <option value="">Select a service</option>
+                        <option value="airport">Airport Transfer</option>
+                        <option value="temple">Temple Tour</option>
+                        <option value="outstation">Outstation Trip</option>
+                        <option value="corporate">Corporate Rental</option>
+                        <option value="wedding">Wedding & Events</option>
+                        <option value="hourly">Hourly Rental</option>
+                        <option value="personal">Personal</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium">Pickup Date *</label>
+                    <input
+                      type="date"
+                      name="date"
+                      required
+                      value={formData.date}
+                      onChange={handleChange}
+                      onClick={(e) => e.target.showPicker?.()}
+                      onFocus={(e) => e.target.showPicker?.()}
+                      className="mt-2 w-full h-10 border rounded-md px-3"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium">Message</label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="mt-2 w-full min-h-[120px] border rounded-md px-3 py-2"
+                      placeholder="Optional"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full h-11 bg-amber-600 hover:bg-amber-700 text-white rounded-md flex items-center justify-center gap-2"
+                  >
+                    Submit Booking Request
+                    <Send className="w-4 h-4" />
+                  </button>
+
+                </form>
+              </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium mb-2">Message</label>
-              <textarea
-                rows="4"
-                placeholder="Write Your Message"
-                className="w-full border-b border-gray-300 focus:outline-none focus:border-black py-2 resize-none"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="bg-[#FF3600] cursor-pointer text-white px-8 py-3 rounded-full hover:bg-[#FF3600]/60 active:bg-[#FF3600]/60 transition"
-            >
-              Send Message
-            </button>
-          </form>
-
+          </div>
         </div>
-      </div>
+      </section>
 
       <Footer />
     </>
   );
 };
 
-/* Reusable Components */
-
-const InfoItem = ({ icon, text }) => (
-  <div className="flex items-start gap-4 mb-4">
-    <div className="mt-1">{icon}</div>
-    <div>{text}</div>
-  </div>
-);
-
-const InputField = ({ label, placeholder, type = "text" }) => (
-  <div>
-    <label className="block text-sm font-medium mb-2">{label}</label>
-    <input
-      type={type}
-      placeholder={placeholder}
-      className="w-full border-b border-gray-300 focus:outline-none focus:border-black py-2"
-    />
-  </div>
-);
-
-const SocialIcon = ({ link, children }) => (
-  <a
-    href={link}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-600 hover:border-orange-500 hover:text-orange-500 transition"
-  >
-    {children}
-  </a>
-);
-
-export default Contact;
+export default Contact2;
