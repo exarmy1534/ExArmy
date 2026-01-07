@@ -50,7 +50,7 @@ export default function CarDetails({ params }) {
   if (loading || !carName) {
     return (
       <div className="h-screen flex items-center justify-center text-3xl font-bold">
-        <span className="loading loading-dots text-[#FF3600] loading-xl"></span>
+        <span className="loading loading-dots text-[#FBBF24] loading-xl"></span>
       </div>
     );
   }
@@ -66,18 +66,44 @@ export default function CarDetails({ params }) {
   return (
     <>
       <Head>
-        <title>{`${car.name} Car Rental in Varanasi | Aaradhya Tours & Travels`}</title>
+        <title>
+          {`${car.name} Car Rental in Varanasi | Ex-Army Travels`}
+        </title>
+
         <meta
           name="description"
-          content={`Book ${car.name} car rental in Varanasi with Aaradhya Tours & Travels. Affordable rates, well-maintained cars, airport transfers, local & outstation trips.`}
+          content={`Book ${car.name} car rental in Varanasi with Ex-Army Travels. Professional Ex-Army drivers, clean and well-maintained cars, airport transfers, temple tours, and outstation trips at affordable prices.`}
         />
-        <meta property="og:title" content={`${car.name} Car Rental in Varanasi`} />
+
+        {/* Open Graph (Facebook / WhatsApp) */}
+        <meta
+          property="og:title"
+          content={`${car.name} Car Rental in Varanasi | Ex-Army Travels`}
+        />
         <meta
           property="og:description"
-          content={`Rent ${car.name} in Varanasi at best prices. Chauffeur-driven cars, airport pickup & outstation services.`}
+          content={`Rent ${car.name} in Varanasi with trusted Ex-Army drivers. Ideal for airport pickup, temple tours, local sightseeing, and outstation travel.`}
         />
+        <meta property="og:type" content="website" />
         <meta property="og:image" content="/logo.png" />
+
+        {/* Twitter SEO */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content={`${car.name} Car Rental in Varanasi | Ex-Army Travels`}
+        />
+        <meta
+          name="twitter:description"
+          content={`Affordable ${car.name} car rental service in Varanasi with disciplined Ex-Army drivers. Book now for airport and outstation trips.`}
+        />
+        <meta name="twitter:image" content="/logo.png" />
+
+        {/* Local SEO */}
+        <meta name="geo.region" content="IN-UP" />
+        <meta name="geo.placename" content="Varanasi" />
       </Head>
+
 
       <Nav open={open} setOpen={setOpen} />
       <Side open={open} setOpen={setOpen} />
@@ -86,7 +112,7 @@ export default function CarDetails({ params }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           {/* LEFT INFO */}
-          <div className="bg-[#FFF8F6] rounded-3xl p-8 order-2 lg:order-1">
+          <div className="bg-gradient-to-br from-yellow-50 to-amber-100 rounded-3xl p-8 order-2 lg:order-1">
             <h1 className="text-3xl text-black font-bold mb-2">{car.name}</h1>
             <p className="text-black mb-6">{car.location}</p>
 
@@ -111,19 +137,19 @@ export default function CarDetails({ params }) {
               <Link href={`/contact?car=${encodeURIComponent(car.name)}`}><button
                 onMouseEnter={() => window.cursor?.enter()}
                 onMouseLeave={() => window.cursor?.leave()}
-                className="bg-[#FF3600] cursor-pointer active:bg-[#FF3600]/60 hover:bg-[#FF3600]/60 transition-all text-white px-8 py-4 rounded-full font-semibold"
+                className="bg-gradient-to-r from-[#FBBF24] to-[#D97706] text-white cursor-pointer active:bg-[#D97706] hover:bg-[#D17106] transition-all text-white px-8 py-4 rounded-full font-semibold"
               >
                 Book Now
               </button>
               </Link>
 
               <a
-                href="tel:+918090579753"
+                href="tel:+917830931514"
                 onMouseEnter={() => window.cursor?.enter()}
                 onMouseLeave={() => window.cursor?.leave()}
-                className="flex cursor-pointer items-center justify-center w-12 h-12 hover:bg-[#FF3600]/60 transition-all rounded-full bg-[#FF3600] text-white"
+                className="flex cursor-pointer items-center active:bg-gray-100 justify-center w-12 h-12 border border-[#FBBF24] hover:bg-yellow-50 transition-all rounded-full text-[#D97706]"
               >
-                <i className="fa-solid fa-phone"></i>
+                <i className=" text-[#D97706] fa-solid fa-phone"></i>
               </a>
             </div>
           </div>
@@ -143,51 +169,87 @@ export default function CarDetails({ params }) {
         </div>
       </section>
 
-      <section className="w-full py-20 bg-white flex items-center justify-center">
-        <div className="max-w-5xl px-6">
-          <p className="text-[#FF3600] font-semibold mb-4 flex items-center gap-2">
-            <span className="text-xl">*</span>
-            General Information
+      <section className="w-full py-24 bg-[#F9FAFB] flex items-center justify-center">
+  <div className="max-w-6xl w-full px-6">
+
+    {/* TOP LABEL */}
+    <p className="text-[#D97706] font-semibold mb-4 flex items-center gap-2 uppercase tracking-wide">
+      <span className="text-xl">*</span>
+      General Information
+    </p>
+
+    {/* MAIN HEADING */}
+    <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-6 leading-tight">
+      Know About Our <span className="text-[#D97706]">Car Rental Service</span>
+    </h2>
+
+    {/* DESCRIPTION */}
+    <p className="text-gray-700 max-w-4xl mb-12 leading-relaxed text-lg">
+      Ex-Army Travels offers reliable and affordable car rental services in
+      Varanasi, ensuring safe, comfortable, and stress-free journeys.
+      From seamless bookings to professionally maintained vehicles and
+      disciplined Ex-Army drivers, we deliver quality service at every step.
+    </p>
+
+    {/* FEATURES */}
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl">
+      
+      <li className="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+        <CheckCircle className="text-[#FBBF24] w-6 h-6 mt-1" />
+        <div>
+          <h3 className="font-semibold text-black text-lg">
+            24/7 Roadside Assistance
+          </h3>
+          <p className="text-gray-600 text-sm mt-1">
+            Travel with confidence knowing help is always available.
           </p>
-
-          <h2 className="text-4xl font-bold text-black mb-6">
-            Know about our car service
-          </h2>
-
-          <p className="text-gray-600 max-w-4xl mb-10 leading-relaxed">
-            We provide reliable and affordable car rental services designed
-            to make your travel comfortable and stress-free. From easy bookings
-            to well-maintained vehicles, we focus on delivering quality at every step.
-          </p>
-
-          <ul className="space-y-4">
-            <li className="flex items-center gap-3">
-              <CheckCircle className="text-[#FF3600]" />
-              <span className="font-semibold text-black">
-                24/7 Roadside Assistance
-              </span>
-            </li>
-
-            <li className="flex items-center gap-3">
-              <CheckCircle className="text-[#FF3600]" />
-              <span className="font-semibold text-black">
-                Free Cancellation & Return
-              </span>
-            </li>
-
-            <li className="flex items-center gap-3">
-              <CheckCircle className="text-[#FF3600]" />
-              <span className="font-semibold text-black">
-                Rent Now, Pay When You Arrive
-              </span>
-            </li>
-          </ul>
-
         </div>
-      </section>
+      </li>
 
-      <PolicyAccordion/>
-      <Footer/>
+      <li className="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+        <CheckCircle className="text-[#FBBF24] w-6 h-6 mt-1" />
+        <div>
+          <h3 className="font-semibold text-black text-lg">
+            Free Cancellation & Return
+          </h3>
+          <p className="text-gray-600 text-sm mt-1">
+            Flexible booking policies designed for your convenience.
+          </p>
+        </div>
+      </li>
+
+      <li className="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+        <CheckCircle className="text-[#FBBF24] w-6 h-6 mt-1" />
+        <div>
+          <h3 className="font-semibold text-black text-lg">
+            Rent Now, Pay When You Arrive
+          </h3>
+          <p className="text-gray-600 text-sm mt-1">
+            No advance pressure — pay only when your journey begins.
+          </p>
+        </div>
+      </li>
+
+      <li className="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+        <CheckCircle className="text-[#FBBF24] w-6 h-6 mt-1" />
+        <div>
+          <h3 className="font-semibold text-black text-lg">
+            Trusted Ex-Army Drivers
+          </h3>
+          <p className="text-gray-600 text-sm mt-1">
+            Professional, disciplined, and safety-focused chauffeurs.
+          </p>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</section>
+
+
+      <PolicyAccordion />
+      <Footer />
     </>
   );
 }
