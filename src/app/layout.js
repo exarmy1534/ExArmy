@@ -70,20 +70,20 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/logo.png" sizes="any" />
         <link rel="apple-touch-icon" href="/logo.png" />
 
-        {/* Google Analytics
+        {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-SBQTX18BJ9"
+          src="https://www.googletagmanager.com/gtag/js?id=G-99K7JFWQM8"
           strategy="afterInteractive"
         />
 
         <Script id="google-analytics" strategy="afterInteractive">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-SBQTX18BJ9');
-          `}
-        </Script> */}
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-99K7JFWQM8');
+    `}
+        </Script>
       </head>
 
       <body
