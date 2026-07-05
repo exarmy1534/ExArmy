@@ -6,14 +6,14 @@ export default function Side({ open, setOpen }) {
             {/* Background overlay */}
             <div
                 onClick={() => setOpen(false)}
-                className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-[998] transition-opacity duration-300 
+                className={`fixed inset-0 bg-black/40  z-[998] transition-opacity duration-300 
                 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
                 `}
             ></div>
 
             {/* Sidebar */}
             <div
-                className={`fixed left-0 top-0 h-screen w-64 bg-black z-[999] overflow-hidden
+                className={`fixed left-0 top-0 h-screen w-64 backdrop-blur-md  z-[999] overflow-hidden
                 transform transition-transform duration-500 ease-out
                 ${open ? "translate-x-0" : "-translate-x-full"}
                 `}
